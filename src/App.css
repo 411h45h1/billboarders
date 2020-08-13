@@ -28,6 +28,18 @@
   border-bottom: 5px solid rgb(78, 69, 126);
 }
 
+.Input {
+  width: 90vw;
+}
+
+.Output {
+  width: 90vw;
+}
+
+.OutputItem {
+  color: black;
+}
+
 .Footer {
   background-color: #282c34;
   min-height: 5vh;

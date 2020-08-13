@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import AppState from "./context/AppState";
-import { Grid, Header } from "semantic-ui-react";
+import { Header } from "semantic-ui-react";
 import { Input } from "./components/Input";
 import { Output } from "./components/Output/";
 
@@ -14,16 +14,10 @@ const App = () => {
             <p style={{ marginLeft: "2%", color: "white" }}>BillBoarders</p>
           </Header>
         </header>
-        <body className="Body">
-          <Grid columns={1} centered>
-            <Grid.Column>
-              <Input />
-            </Grid.Column>
-            <Grid.Column>
-              <Output />
-            </Grid.Column>
-          </Grid>
-        </body>
+        <div className="Body">
+          <Input />
+          <Output />
+        </div>
         <footer className="Footer"></footer>
       </div>
     </AppState>
