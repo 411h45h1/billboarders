@@ -49,12 +49,50 @@ const Input = () => {
           </Header>
         </Grid.Column>
 
-        {/* Search */}
+        {/* Search area */}
         {firstButton && (
           <>
-            <Grid.Column width={2}>
+            <Grid.Column width={7}>
               <Header size="huge" textAlign="center">
-                Search
+                Billboard All Time Top 200 Albums Search
+              </Header>
+            </Grid.Column>
+            <Grid.Column width={3}>
+              <SemanticInput
+                type="text"
+                onChange={(e) => setSearch(e.target.value)}
+                size="large"
+                disabled={false}
+                loading={false}
+                placeholder="YYYY-MM-DD"
+              />
+            </Grid.Column>
+            <Grid.Column width={2}>
+              {search.length > 9 ? (
+                <Button
+                  content="Submit"
+                  primary
+                  onClick={() => getChartWeek(search)}
+                />
+              ) : null}
+            </Grid.Column>
+            <Grid.Column width={1}>
+              {search.length > 9 ? (
+                <Button
+                  content="Clear"
+                  color="red"
+                  onClick={() => clearWeek()}
+                />
+              ) : null}
+            </Grid.Column>
+          </>
+        )}
+
+        {secondButton && (
+          <>
+            <Grid.Column width={4}>
+              <Header size="huge" textAlign="center">
+                Billboard Hot 100 Search
               </Header>
             </Grid.Column>
             <Grid.Column width={3}>
