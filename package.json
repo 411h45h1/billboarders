@@ -1,7 +1,7 @@
 {
   "name": "billboarders",
-  "version": "0.1.0",
-  "homepage": "http://AhmedAlihashi.github.io/billboarders",
+  "version": "1.0.0",
+  "homepage": "https://ahmedalihashi.github.io/billboarders/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
