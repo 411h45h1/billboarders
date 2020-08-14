@@ -20,14 +20,17 @@ const Output = () => {
   return (
     week.length > 0 && (
       <Segment className="Output">
-        <p style={{ color: "black" }}>Output</p>
         <Grid centered>
           <Grid.Row centered columns={5}>
             {week[0].songs.map((i, k) => {
               return (
                 <Grid.Column key={k}>
-                  <Segment className="OutputItem" style={{ marginBottom: 10 }}>
-                    <Label color="red" size="large" ribbon>
+                  <Segment
+                    inverted
+                    className="OutputItem"
+                    style={{ marginBottom: 10 }}
+                  >
+                    <Label color="purple" size="large" ribbon>
                       {i.rank}
                     </Label>
                     <Card>
@@ -40,8 +43,9 @@ const Output = () => {
                         {/* <Card.Description>{i.title}</Card.Description> */}
                       </Card.Content>
                     </Card>
-                    <Statistic.Group size="mini" horizontal>
+                    <Statistic.Group inverted size="mini" horizontal>
                       <Statistic
+                        inverted
                         color="yellow"
                         label="Highest Position"
                         value={i.position.peakPosition}
@@ -49,6 +53,7 @@ const Output = () => {
 
                       {i.position.positionLastWeek ? (
                         <Statistic
+                          inverted
                           color="teal"
                           label={`Last week's Position`}
                           value={i.position.positionLastWeek}
@@ -57,6 +62,7 @@ const Output = () => {
 
                       {i.position.weeksOnChart ? (
                         <Statistic
+                          inverted
                           color="orange"
                           label={`Week's on the chart`}
                           value={i.position.weeksOnChart}

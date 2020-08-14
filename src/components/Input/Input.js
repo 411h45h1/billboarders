@@ -6,7 +6,6 @@ import {
   Header,
   Button,
 } from "semantic-ui-react";
-import DatePicked from "./DatePicked";
 import AppContext from "../../context/appContext";
 
 const Input = () => {
@@ -35,7 +34,7 @@ const Input = () => {
         </Grid.Column>
 
         <Grid.Column width={2}>
-          {search.length < 20 ? (
+          {search.length > 9 ? (
             <Button
               content="Submit"
               primary
@@ -44,7 +43,7 @@ const Input = () => {
           ) : null}
         </Grid.Column>
         <Grid.Column width={1}>
-          {search.length < 20 ? (
+          {search.length > 9 ? (
             <Button content="Clear" color="red" onClick={() => clearWeek()} />
           ) : null}
         </Grid.Column>
