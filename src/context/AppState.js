@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer } from "react";
 import AppContext from "./appContext";
 import appReducer from "./appReducer";
 import { getChart, listCharts } from "billboard-top-100";
