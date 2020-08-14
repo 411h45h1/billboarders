@@ -13,7 +13,7 @@ import AppContext from "../../context/appContext";
 
 const Output = () => {
   const appState = useContext(AppContext);
-  const { week, loading } = appState;
+  const { allTime, week, loading } = appState;
 
   return (
     <Segment className="Output">
@@ -70,6 +70,33 @@ const Output = () => {
                         />
                       ) : null}
                     </Statistic.Group>
+                  </Segment>
+                </Grid.Column>
+              );
+            })}
+
+          {allTime.length > 0 &&
+            allTime[0].songs.map((i, k) => {
+              return (
+                <Grid.Column key={k}>
+                  <Segment
+                    inverted
+                    className="OutputItem"
+                    style={{ marginBottom: 10 }}
+                  >
+                    <Label color="purple" size="large" ribbon>
+                      {i.rank}
+                    </Label>
+                    <Card>
+                      <Card.Content>
+                        <Image floated="left" size="tiny" src={i.cover} />
+                        <Card.Header>{i.artist}</Card.Header>
+                        <Card.Meta>
+                          <span>{i.title}</span>
+                        </Card.Meta>
+                        {/* <Card.Description>{i.title}</Card.Description> */}
+                      </Card.Content>
+                    </Card>
                   </Segment>
                 </Grid.Column>
               );

@@ -1,5 +1,10 @@
 export default (state, { type, payload }) => {
   switch (type) {
+    case "GET_ALLTIME_200":
+      return {
+        ...state,
+        allTime: [...state.allTime, payload],
+      };
     case "GET_HOT100_WEEK":
       return {
         ...state,

@@ -1,14 +1,25 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import AppContext from "./appContext";
 import appReducer from "./appReducer";
 import { getChart, listCharts } from "billboard-top-100";
 
 const AppState = (props) => {
   const initialState = {
+    allTime: [],
     week: [],
   };
   const [state, dispatch] = useReducer(appReducer, initialState);
 
+  // Get Greatest 200 list
+  const getAllTime200 = () => {
+    getChart("greatest-billboard-200-albums", (err, chart) => {
+      if (err) console.log(err);
+      dispatch({ type: "GET_ALLTIME_200", payload: chart });
+      console.log("greatest", chart.songs);
+    });
+  };
+
+  // lists
   const getChartLists = () => {
     listCharts((err, charts) => {
       if (err) console.log(err);
@@ -16,7 +27,7 @@ const AppState = (props) => {
     });
   };
 
-  //Get Chart
+  //Get week Chart
   const getChartWeek = (search) => {
     getChart("hot-100", search, (err, chart) => {
       if (state.week.length === 0) {
@@ -33,6 +44,8 @@ const AppState = (props) => {
     <AppContext.Provider
       value={{
         week: state.week,
+        allTime: state.allTime,
+        getAllTime200,
         getChartLists,
         getChartWeek,
         clearWeek,

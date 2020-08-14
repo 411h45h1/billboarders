@@ -10,17 +10,22 @@ import AppContext from "../../context/appContext";
 
 const Input = () => {
   const appState = useContext(AppContext);
-  const { getChartWeek, clearWeek } = appState;
+  const { allTime, getChartWeek, clearWeek, getAllTime200 } = appState;
   const [search, setSearch] = useState("");
 
   const [firstButton, setFirstButton] = useState(false);
   const [secondButton, setSecondButton] = useState(false);
 
   const firstButtonClick = () => {
-    return setFirstButton(!firstButton), setSecondButton(false);
+    setFirstButton(!firstButton);
+    setSecondButton(false);
+    if (allTime.length < 1) {
+      getAllTime200();
+    }
   };
   const secondButtonClick = () => {
-    return setFirstButton(false), setSecondButton(!secondButton);
+    setFirstButton(false);
+    setSecondButton(!secondButton);
   };
   return (
     <Segment className="Input">
@@ -50,43 +55,6 @@ const Input = () => {
         </Grid.Column>
 
         {/* Search area */}
-        {firstButton && (
-          <>
-            <Grid.Column width={7}>
-              <Header size="huge" textAlign="center">
-                Billboard All Time Top 200 Albums Search
-              </Header>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <SemanticInput
-                type="text"
-                onChange={(e) => setSearch(e.target.value)}
-                size="large"
-                disabled={false}
-                loading={false}
-                placeholder="YYYY-MM-DD"
-              />
-            </Grid.Column>
-            <Grid.Column width={1}>
-              {search.length > 9 ? (
-                <Button
-                  content="Submit"
-                  primary
-                  onClick={() => getChartWeek(search)}
-                />
-              ) : null}
-            </Grid.Column>
-            <Grid.Column width={1}>
-              {search.length > 9 ? (
-                <Button
-                  content="Clear"
-                  color="red"
-                  onClick={() => clearWeek()}
-                />
-              ) : null}
-            </Grid.Column>
-          </>
-        )}
 
         {secondButton && (
           <>
