@@ -9,11 +9,18 @@
 .Header {
   background-color: #282c34;
   min-height: 10vh;
+  padding-left: 2%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+}
+
+#headerText {
+  font-size: 4em;
+  font-weight: bold;
+  color: white;
 }
 
 .Body {

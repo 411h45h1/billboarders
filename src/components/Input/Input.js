@@ -67,7 +67,7 @@ const Input = () => {
                 placeholder="YYYY-MM-DD"
               />
             </Grid.Column>
-            <Grid.Column width={2}>
+            <Grid.Column width={1}>
               {search.length > 9 ? (
                 <Button
                   content="Submit"
@@ -105,7 +105,7 @@ const Input = () => {
                 placeholder="YYYY-MM-DD"
               />
             </Grid.Column>
-            <Grid.Column width={2}>
+            <Grid.Column width={1}>
               {search.length > 9 ? (
                 <Button
                   content="Submit"
