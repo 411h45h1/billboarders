@@ -93,8 +93,6 @@ const Input = () => {
             </Grid.Column>
           </>
         )}
-
-        <Grid.Column />
       </Grid>
     </Segment>
   );

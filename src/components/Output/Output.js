@@ -20,10 +20,11 @@ const Output = () => {
       <Dimmer active={loading}>
         <Loader />
       </Dimmer>
-      <Grid centered>
-        <Grid.Row centered columns={5}>
-          {week.length > 0 &&
-            week[0].songs.map((i, k) => {
+
+      {week.length > 0 && (
+        <Grid centered>
+          <Grid.Row centered columns={5}>
+            {week[0].songs.map((i, k) => {
               return (
                 <Grid.Column key={k}>
                   <Segment
@@ -74,9 +75,14 @@ const Output = () => {
                 </Grid.Column>
               );
             })}
+          </Grid.Row>
+        </Grid>
+      )}
 
-          {allTime.length > 0 &&
-            allTime[0].songs.map((i, k) => {
+      {allTime.length > 0 && (
+        <Grid centered>
+          <Grid.Row centered columns={5}>
+            {allTime[0].songs.map((i, k) => {
               return (
                 <Grid.Column key={k}>
                   <Segment
@@ -101,8 +107,9 @@ const Output = () => {
                 </Grid.Column>
               );
             })}
-        </Grid.Row>
-      </Grid>
+          </Grid.Row>
+        </Grid>
+      )}
     </Segment>
   );
 };

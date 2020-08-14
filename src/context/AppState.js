@@ -7,6 +7,7 @@ const AppState = (props) => {
   const initialState = {
     allTime: [],
     week: [],
+    loading: false,
   };
   const [state, dispatch] = useReducer(appReducer, initialState);
 
@@ -40,11 +41,15 @@ const AppState = (props) => {
 
   const clearWeek = () => dispatch({ type: "CLEAR_HOT100_WEEK" });
 
+  const onLoading = () => dispatch({ type: "LOADING" });
+
   return (
     <AppContext.Provider
       value={{
+        loading: state.loading,
         week: state.week,
         allTime: state.allTime,
+        onLoading,
         getAllTime200,
         getChartLists,
         getChartWeek,

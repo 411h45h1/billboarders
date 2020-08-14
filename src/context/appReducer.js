@@ -1,5 +1,10 @@
 export default (state, { type, payload }) => {
   switch (type) {
+    case "LOADING":
+      return {
+        ...state,
+        loading: true,
+      };
     case "GET_ALLTIME_200":
       return {
         ...state,
