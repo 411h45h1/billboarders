@@ -10,8 +10,8 @@ const AppState = (props) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
   //Get Chart
-  const getChartWeek = () => {
-    getChart("hot-100", "2020-08-13", (err, chart) => {
+  const getChartWeek = (search) => {
+    getChart("hot-100", search, (err, chart) => {
       if (state.week.length === 0) {
         dispatch({ type: "GET_HOT100_WEEK", payload: chart });
       } else if (err) {
@@ -20,8 +20,10 @@ const AppState = (props) => {
     });
   };
 
+  const clearWeek = () => dispatch({ type: "CLEAR_HOT100_WEEK" });
+
   return (
-    <AppContext.Provider value={{ week: state.week, getChartWeek }}>
+    <AppContext.Provider value={{ week: state.week, getChartWeek, clearWeek }}>
       {props.children}
     </AppContext.Provider>
   );

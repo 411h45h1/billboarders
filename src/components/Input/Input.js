@@ -1,20 +1,56 @@
-import React, { useContext, useEffect } from "react";
-import { Segment } from "semantic-ui-react";
+import React, { useContext, useEffect, useState } from "react";
+import {
+  Grid,
+  Segment,
+  Input as SemanticInput,
+  Header,
+  Button,
+} from "semantic-ui-react";
 import DatePicked from "./DatePicked";
 import AppContext from "../../context/appContext";
 
 const Input = () => {
   const appState = useContext(AppContext);
-  const { getChartWeek, week } = appState;
+  const { getChartWeek, week, clearWeek } = appState;
+  const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    getChartWeek();
-  }, [getChartWeek, week]);
+  useEffect(() => {}, [getChartWeek, week, search]);
 
   return (
     <Segment className="Input">
-      <p style={{ color: "black" }}>Input</p>
-      <DatePicked />
+      <Grid columns="equal">
+        <Grid.Column width={2}>
+          <Header size="huge" textAlign="center">
+            Search
+          </Header>
+        </Grid.Column>
+        <Grid.Column width={3}>
+          <SemanticInput
+            onChange={(e) => setSearch(e.target.value)}
+            size="large"
+            disabled={false}
+            loading={false}
+            placeholder="YYYY-MM-DD"
+          />
+        </Grid.Column>
+
+        <Grid.Column width={2}>
+          {search.length < 20 ? (
+            <Button
+              content="Submit"
+              primary
+              onClick={() => getChartWeek(search)}
+            />
+          ) : null}
+        </Grid.Column>
+        <Grid.Column width={1}>
+          {search.length < 20 ? (
+            <Button content="Clear" color="red" onClick={() => clearWeek()} />
+          ) : null}
+        </Grid.Column>
+
+        <Grid.Column />
+      </Grid>
     </Segment>
   );
 };
