@@ -1,28 +1,29 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import {
   Grid,
   Segment,
   Label,
   Card,
   Statistic,
+  Dimmer,
+  Loader,
   Image,
 } from "semantic-ui-react";
 import AppContext from "../../context/appContext";
 
 const Output = () => {
   const appState = useContext(AppContext);
-  const { week } = appState;
-
-  useEffect(() => {
-    week[0] && console.log("week", week[0]);
-  }, [week]);
+  const { week, loading } = appState;
 
   return (
-    week.length > 0 && (
-      <Segment className="Output">
-        <Grid centered>
-          <Grid.Row centered columns={5}>
-            {week[0].songs.map((i, k) => {
+    <Segment className="Output">
+      <Dimmer active={loading}>
+        <Loader />
+      </Dimmer>
+      <Grid centered>
+        <Grid.Row centered columns={5}>
+          {week.length > 0 &&
+            week[0].songs.map((i, k) => {
               return (
                 <Grid.Column key={k}>
                   <Segment
@@ -73,10 +74,9 @@ const Output = () => {
                 </Grid.Column>
               );
             })}
-          </Grid.Row>
-        </Grid>
-      </Segment>
-    )
+        </Grid.Row>
+      </Grid>
+    </Segment>
   );
 };
 

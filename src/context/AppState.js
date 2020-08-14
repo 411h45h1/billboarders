@@ -1,13 +1,20 @@
 import React, { useReducer } from "react";
 import AppContext from "./appContext";
 import appReducer from "./appReducer";
-import { getChart } from "billboard-top-100";
+import { getChart, listCharts } from "billboard-top-100";
 
 const AppState = (props) => {
   const initialState = {
     week: [],
   };
   const [state, dispatch] = useReducer(appReducer, initialState);
+
+  const getChartLists = () => {
+    listCharts((err, charts) => {
+      if (err) console.log(err);
+      console.log(charts);
+    });
+  };
 
   //Get Chart
   const getChartWeek = (search) => {
@@ -23,7 +30,14 @@ const AppState = (props) => {
   const clearWeek = () => dispatch({ type: "CLEAR_HOT100_WEEK" });
 
   return (
-    <AppContext.Provider value={{ week: state.week, getChartWeek, clearWeek }}>
+    <AppContext.Provider
+      value={{
+        week: state.week,
+        getChartLists,
+        getChartWeek,
+        clearWeek,
+      }}
+    >
       {props.children}
     </AppContext.Provider>
   );
