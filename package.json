@@ -1,7 +1,6 @@
 {
   "name": "billboarders",
   "homepage": "./",
-  "author": "Ahmed Ali",
   "main": "./start.js",
   "version": "0.1.0",
   "private": true,
@@ -62,7 +61,7 @@
   },
   "build": {
     "productName": "Billboarders",
-    "copyright": "Copyright © 2019 ",
+    "copyright": "Copyright  © 2019 ",
     "mac": {
       "icon": "./public/favicon.ico"
     },
