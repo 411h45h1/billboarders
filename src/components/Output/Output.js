@@ -72,7 +72,7 @@ const Output = () => {
                           <Statistic
                             inverted
                             color="teal"
-                            label={`Last week's Position`}
+                            label={`Prior week's Position`}
                             value={i.position.positionLastWeek}
                           />
                         ) : null}
@@ -169,7 +169,7 @@ const Output = () => {
                           <Statistic
                             inverted
                             color="teal"
-                            label={`Last week's Position`}
+                            label={`Prior week's Position`}
                             value={i.position.positionLastWeek}
                           />
                         ) : null}
@@ -267,7 +267,7 @@ const Output = () => {
                           <Statistic
                             inverted
                             color="teal"
-                            label={`Last week's Position`}
+                            label={`Prior week's Position`}
                             value={i.position.positionLastWeek}
                           />
                         ) : null}
