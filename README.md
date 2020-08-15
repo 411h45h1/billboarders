@@ -1,5 +1,5 @@
 # Billboarders
-> Note I'm currently working on this  
+> *Note: I'm currently working on this*  
 
  This desktop Application queries billboard for either its `Top 200 Greatest Albums of All-Time`, or its weekly `Hot 100` (based on week entered).
 
