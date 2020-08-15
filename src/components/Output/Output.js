@@ -16,7 +16,7 @@ const Output = () => {
   const { allTime, week, loading } = appState;
 
   return (
-    <Segment className="Output">
+    <Segment>
       <Dimmer active={loading}>
         <Loader />
       </Dimmer>

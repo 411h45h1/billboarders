@@ -28,7 +28,7 @@ const Input = () => {
     setSecondButton(!secondButton);
   };
   return (
-    <Segment className="Input">
+    <Segment>
       <Grid columns="equal">
         {/* Nav */}
         <Grid.Column width={16}>
