@@ -142,7 +142,7 @@ const Input = () => {
                 placeholder="YYYY-MM-DD"
               />
             </Grid.Column>
-            <Grid.Column width={8} as={Media} at="mobile">
+            <Grid.Column width={16} as={Media} at="mobile">
               {search.length > 9 ? (
                 <Button
                   content="Submit"
