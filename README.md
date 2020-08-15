@@ -22,3 +22,7 @@ git clone https://github.com/AhmedAlihashi/billboarders.git
 npm install or yarn install
 npm run build-win or yarn build~win
 ```
+
+# Screen Shot
+<img src='./github/v1.png' height='600' width='800' ></img>
+
