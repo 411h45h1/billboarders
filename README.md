@@ -14,7 +14,7 @@ npm install or yarn install
 npm run start or yarn start
 ```
 
-You can download the pre-built version [here](https://mega.nz/file/ijQ3RYTQ#Z5plqMR5-gLxG0MgneCWZTDz2GbedujV_1azbqPYx7I)
+You can download the pre-built version [here](https://mega.nz/file/3i5EjaJD#dYnes6lGALsFS333mzPPd2Cgsb27YCaxgsq4Cv-hR70)
 
 Alternativly you can build your own version locally
 
