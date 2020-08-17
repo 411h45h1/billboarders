@@ -88,7 +88,7 @@ const App = () => {
             <Grid.Column id="NoDrag" width={16}>
               <Input />
             </Grid.Column>
-            <Grid.Column id="NoDrag" width={16} style={{ marginTop: 10 }}>
+            <Grid.Column id="NoDrag" width={16}>
               <Output />
             </Grid.Column>
           </Grid>
