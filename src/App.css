@@ -10,14 +10,21 @@
   margin: 10;
 }
 
-.link {
-  color: #61dafb;
+#headerText {
+  font-size: 5em;
+  font-weight: bold;
+  color: black;
 }
 
-#headerText {
-  font-size: 4em;
-  font-weight: bold;
-  color: white;
+.AppHeader {
+  -webkit-app-region: drag;
+  background-color: #4e77ae;
+  border: 5px solid black;
+  border-radius: 20px;
+}
+
+.link {
+  color: #61dafb;
 }
 
 .OutputItem {
