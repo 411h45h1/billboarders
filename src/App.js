@@ -27,13 +27,13 @@ const App = () => {
         style={{
           width: "100vw",
           height: "100vh",
-          backgroundColor: "#282c34",
+          backgroundColor: "#AE854E",
         }}
       >
         <style>{mediaStyles}</style>
         <MediaContextProvider>
           <Grid style={{ margin: 5 }}>
-            <Grid.Row id="Drag" columns={"equal"}>
+            <Grid.Row className="AppHeader" columns={"equal"}>
               {/* Mobile */}
 
               <Grid.Column width={16} as={Media} at="mobile">
@@ -59,7 +59,7 @@ const App = () => {
                 <p id="headerText">BillBoarders</p>
               </Grid.Column>
 
-              {/* Tablet */}
+              {/* Greater */}
 
               <Grid.Column width={8} as={Media} greaterThanOrEqual="tablet">
                 <p id="headerText">BillBoarders</p>
@@ -83,16 +83,14 @@ const App = () => {
                   />
                 </Button.Group>
               </Grid.Column>
-
-              {/* Greater */}
-
-              <Grid.Column id="NoDrag" width={16}>
-                <Input />
-              </Grid.Column>
-              <Grid.Column id="NoDrag" width={16} style={{ marginTop: 10 }}>
-                <Output />
-              </Grid.Column>
             </Grid.Row>
+
+            <Grid.Column id="NoDrag" width={16}>
+              <Input />
+            </Grid.Column>
+            <Grid.Column id="NoDrag" width={16} style={{ marginTop: 10 }}>
+              <Output />
+            </Grid.Column>
           </Grid>
         </MediaContextProvider>
       </Scrollbars>
