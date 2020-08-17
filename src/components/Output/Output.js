@@ -28,7 +28,7 @@ const Output = () => {
   const appState = useContext(AppContext);
   const { allTime, week, loading } = appState;
 
-  return (
+  return (allTime.length > 0) | (week.length > 0) ? (
     <>
       {/* Mobile */}
 
@@ -322,7 +322,7 @@ const Output = () => {
         )}
       </Segment>
     </>
-  );
+  ) : null;
 };
 
 export default Output;

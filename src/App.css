@@ -11,9 +11,10 @@
 }
 
 #headerText {
-  font-size: 5em;
+  font-size: 4em;
   font-weight: bold;
   color: black;
+  font-family: Segoe Script;
 }
 
 .AppHeader {
