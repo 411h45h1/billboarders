@@ -14,7 +14,7 @@ npm install or yarn install
 npm run start or yarn start
 ```
 
-> You can download the pre-packaged version dev version [here](https://mega.nz/file/DnZ2XC6b#qUYtWGiya8u9MzfHG-lvv5toNCVZK9nItMd8pmFPjj0)
+> You can download the pre-packaged version dev version [here](https://drive.google.com/file/d/1-oPqrF7NPneBdBkOYk29uO589Rm1irwb/view?usp=sharing)
 
 Alternativly you can build your own version locally
 
